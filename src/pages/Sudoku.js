@@ -181,7 +181,6 @@ const Sudoku = () => {
                                                 e.target.value = val.slice(0,1);
                                               }
                                               setSudokuValue(rowIndex, cellIndex, e.target.value)
-                                              console.log(colors[rowIndex][cellIndex]);
                                               e.target.style.color = colors[rowIndex][cellIndex];
                                             }}/></td>
                                         )
