@@ -114,7 +114,6 @@ const Sudoku = () => {
       newSudoku[row][col] = Number(value);
       setSudoku(newSudoku);
 
-      console.log(sudokuSolved[row][col], value)
 
       if(parseInt(value) !== sudokuSolved[row][col]){
         let newColors = colors;
@@ -123,7 +122,6 @@ const Sudoku = () => {
       }
       else {
         let newColors = colors;
-        console.log("Here");
         newColors[row][col] = "white";
         setColors(newColors);
       }
