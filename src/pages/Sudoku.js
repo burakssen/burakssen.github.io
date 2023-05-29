@@ -109,22 +109,25 @@ const Sudoku = () => {
 
   
 
-  const setSudokuValue = useCallback((row, col, value) => {
+  const setSudokuValue = (row, col, value) => {
       var newSudoku = sudoku;
       newSudoku[row][col] = Number(value);
       setSudoku(newSudoku);
 
-      if(value !== sudokuSolved[row][col]){
+      console.log(sudokuSolved[row][col], value)
+
+      if(parseInt(value) !== sudokuSolved[row][col]){
         let newColors = colors;
         newColors[row][col] = "red";
         setColors(newColors);
       }
       else {
         let newColors = colors;
+        console.log("Here");
         newColors[row][col] = "white";
         setColors(newColors);
       }
-    }, [sudoku, sudokuSolved, colors, setSudoku, setColors]);
+    };
 
     const generateSudoku = useCallback(() => {
 
@@ -180,6 +183,7 @@ const Sudoku = () => {
                                                 e.target.value = val.slice(0,1);
                                               }
                                               setSudokuValue(rowIndex, cellIndex, e.target.value)
+                                              console.log(colors[rowIndex][cellIndex]);
                                               e.target.style.color = colors[rowIndex][cellIndex];
                                             }}/></td>
                                         )
