@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import produce from 'immer';
 
 import '../styles/gameoflife.css';
@@ -21,8 +21,6 @@ const Gameoflife = () => {
     const [prevGridList, setPrevGridList] = useState([]);
     const [start, setStart] = useState(false);
     const [initialGrid, setInitialGrid] = useState([]);
-
-    const [enablePattern, setEnablePattern] = useState(false);
 
     const setPattern = (pattern) => {
         let t_pattern = getPattern(pattern);
@@ -71,7 +69,9 @@ const Gameoflife = () => {
             setPrevGridList([]);
         }, 100);
     }
-    const RunGame = () => {
+
+
+    const RunGame = useCallback(() => {
         const newGrid = produce(grid, gridCopy => {
             for(let i = 0; i < grid.length; i++){
                 for(let k = 0; k < grid[i].length; k++){
@@ -112,7 +112,7 @@ const Gameoflife = () => {
             }
         });
         setGrid(newGrid);
-    }
+    }, [grid]);
 
     useEffect(() => {
         if(start){
@@ -128,7 +128,7 @@ const Gameoflife = () => {
             }, 100);
         }
 
-    }, [grid, start]);
+    }, [grid, start, prevGridList, initialGrid, RunGame]);
     
     return (
         <div id="gameoflife">

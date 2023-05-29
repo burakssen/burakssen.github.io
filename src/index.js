@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter, HashRouter, Route, RouterProvider, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 const Sudoku = lazy(() => import('./pages/Sudoku.js'));
 const Gameoflife = lazy(() => import('./pages/Gameoflife.js'));

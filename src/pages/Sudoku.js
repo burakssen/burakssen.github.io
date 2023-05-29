@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import "../styles/sudoku.css";
 
@@ -8,24 +8,125 @@ const Sudoku = () => {
     const [sudokuSolved, setSudokuSolved] = useState([]);
     const [colors, setColors] = useState([]);
     
-    const setSudokuValue = (row, col, value) => {
+    const shuffle = useCallback((array) => {
+      let currentIndex = array.length;
+      let randomIndex;
+    
+      // While there remain elements to shuffle.
+      while (currentIndex !== 0) {
+    
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+    
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]];
+      }
+    
+      return array;
+    }, []);
+
+    const findEmptyCell = useCallback((grid) => {
+      for (var row = 0; row < 9; row++) {
+        for (var col = 0; col < 9; col++) {
+          if (grid[row][col] === 0) {
+            return [row, col];
+          }
+        }
+      }
+      return [-1, -1];
+    }, []);
+
+    const isValidNumber = useCallback((grid, row, col, num) => {
+      for (var i = 0; i < 9; i++) {
+          if (grid[row][i] === num) {
+              return false;
+          }
+      }
+      
+      for (var j = 0; j < 9; j++) {
+        if (grid[j][col] === num) {
+          return false;
+        }
+      }
+  
+      var startRow = Math.floor(row / 3) * 3;
+      var startCol = Math.floor(col / 3) * 3;
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          if (grid[startRow + i][startCol + j] === num) {
+            return false;
+          }
+        }
+      }
+  
+      return true;
+  }, []);
+
+  const removeNumbers = useCallback((grid) => {
+    var emptyCells = 0;
+    var maxEmptyCells = 81 - 17;
+    
+    while (emptyCells < maxEmptyCells) {
+        var row = Math.floor(Math.random() * 9);
+        var col = Math.floor(Math.random() * 9);
+
+        if (grid[row][col] !== 0) {
+            grid[row][col] = 0;
+            emptyCells++;
+        }
+    }
+  }, []);
+  const solveSudoku = useCallback((grid) => {
+      var cell = findEmptyCell(grid);
+      var row = cell[0];
+      var col = cell[1];
+
+      if (row === -1) {
+        return true;
+      }
+      let values = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      
+      values = shuffle(values);
+
+
+      for(let i = 0; i < values.length; i++){
+        let num = values[i];
+        if (isValidNumber(grid, row, col, num)) {
+          grid[row][col] = num;
+
+          if (solveSudoku(grid)) {
+            return true;
+          }
+      
+          grid[row][col] = 0;
+        }
+      }
+
+      return false;
+  }, [findEmptyCell, isValidNumber, shuffle]);
+
+  
+
+  const setSudokuValue = useCallback((row, col, value) => {
       var newSudoku = sudoku;
       newSudoku[row][col] = Number(value);
       setSudoku(newSudoku);
 
-      if(value != sudokuSolved[row][col]){
-        var newColors = colors;
+      if(value !== sudokuSolved[row][col]){
+        let newColors = colors;
         newColors[row][col] = "red";
         setColors(newColors);
       }
       else {
-        var newColors = colors;
+        let newColors = colors;
         newColors[row][col] = "white";
         setColors(newColors);
       }
-    }
+    }, [sudoku, sudokuSolved, colors, setSudoku, setColors]);
 
-    const generateSudoku = () => {
+    const generateSudoku = useCallback(() => {
 
         var grid = [];
         for (var i = 0; i < 9; i++) {
@@ -44,113 +145,11 @@ const Sudoku = () => {
         removeNumbers(grid);
 
         setSudoku(grid);
-    }
-
-    const shuffle = (array) => {
-      let currentIndex = array.length;
-      let randomIndex;
-    
-      // While there remain elements to shuffle.
-      while (currentIndex != 0) {
-    
-        // Pick a remaining element.
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-    
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-          array[randomIndex], array[currentIndex]];
-      }
-    
-      return array;
-    }
-
-    const solveSudoku = (grid) => {
-        var cell = findEmptyCell(grid);
-        var row = cell[0];
-        var col = cell[1];
-
-        if (row === -1) {
-          return true;
-        }
-        let values = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        
-        values = shuffle(values);
-
-
-        for(let i = 0; i < values.length; i++){
-          let num = values[i];
-          if (isValidNumber(grid, row, col, num)) {
-            grid[row][col] = num;
-
-            if (solveSudoku(grid)) {
-              return true;
-            }
-        
-            grid[row][col] = 0;
-          }
-        }
-
-        return false;
-    }
-
-    
-    const findEmptyCell = (grid) => {
-        for (var row = 0; row < 9; row++) {
-          for (var col = 0; col < 9; col++) {
-            if (grid[row][col] === 0) {
-              return [row, col];
-            }
-          }
-        }
-        return [-1, -1];
-    }
-
-
-    const isValidNumber = (grid, row, col, num) => {
-        for (var i = 0; i < 9; i++) {
-            if (grid[row][i] === num) {
-                return false;
-            }
-        }
-        
-        for (var j = 0; j < 9; j++) {
-          if (grid[j][col] === num) {
-            return false;
-          }
-        }
-    
-        var startRow = Math.floor(row / 3) * 3;
-        var startCol = Math.floor(col / 3) * 3;
-        for (var i = 0; i < 3; i++) {
-          for (var j = 0; j < 3; j++) {
-            if (grid[startRow + i][startCol + j] === num) {
-              return false;
-            }
-          }
-        }
-    
-        return true;
-    }
-
-    const removeNumbers = (grid) => {
-        var emptyCells = 0;
-        var maxEmptyCells = 81 - 17;
-        
-        while (emptyCells < maxEmptyCells) {
-            var row = Math.floor(Math.random() * 9);
-            var col = Math.floor(Math.random() * 9);
-
-            if (grid[row][col] !== 0) {
-                grid[row][col] = 0;
-                emptyCells++;
-            }
-        }
-    }
+    }, [solveSudoku, removeNumbers, setSudokuSolved, setSudoku]);
 
     useEffect(() => {
         generateSudoku();
-    }, []);
+    }, [generateSudoku]);
 
     useEffect(() => {
       var colors = [];
