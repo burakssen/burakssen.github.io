@@ -9,8 +9,7 @@ import { getOrganizations } from "../components/organizations.js";
 
 
 const Home = () => {
-    const [conversationList, setConversationList] = useState([{prompt: "", response: <div>
-    <div>Hey!</div>
+    const [conversationList, setConversationList] = useState([{prompt: "", response: <div><div>Hey!</div>
     <div>Simply type "help" to discover and learn about all the available commands.</div>
     <div>By Burak Şen {new Date().getFullYear()}</div> 
   </div>}]);
@@ -81,6 +80,9 @@ const Home = () => {
         break;
       case "gameoflife":
         window.location.href = "/#/gameoflife";
+        break;
+      case "sudoku":
+        window.location.href = "/#/sudoku";
         break;
       case "":
         setConversationList([...conversationList, {prompt: getPromptString(" ", false), response: ""}]);

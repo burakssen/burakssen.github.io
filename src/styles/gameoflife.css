@@ -41,7 +41,7 @@ h1 {
     margin-left: 10vh;
     font-size: 1.2rem;
     cursor: pointer;
-    width: 30vh;
+    width: 53vh;
     height: 5vh;
 }
 
@@ -49,5 +49,26 @@ h1 {
     background-color: #555;
 }
 .button:active {
+    background-color: #777;
+}
+
+.select {
+    align-self: center;
+    color: white;
+    background-color: #333;
+    border: 1px solid white;
+    padding: 5px 10px;
+    margin-left: 10vh;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 53vh;
+    height: 5vh;
+}
+
+.select:hover {
+    background-color: #555;
+}
+
+.select:active {
     background-color: #777;
 }

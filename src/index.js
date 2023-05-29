@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
-import {HashRouter, Route, RouterProvider, Routes } from "react-router-dom";
-import Home from "./pages/Home.js";
-import Gameoflife from "./pages/Gameoflife.js";
+import {BrowserRouter, HashRouter, Route, RouterProvider, Routes } from "react-router-dom";
+
+const Sudoku = lazy(() => import('./pages/Sudoku.js'));
+const Gameoflife = lazy(() => import('./pages/Gameoflife.js'));
+const Home = lazy(() => import('./pages/Home.js'));
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <HashRouter basename="/">
       <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route path="/gameoflife" element={<Gameoflife/>} />
+        <Route exact path="/" element={
+          <Suspense fallback={<div></div>}>
+            <Home/>
+          </Suspense>
+        } />
+        <Route path="/gameoflife" element={
+          <Suspense fallback={<div></div>}>
+            <Gameoflife/>
+          </Suspense>
+        } />
+        <Route path="/sudoku" element={
+          <Suspense fallback={<div></div>}>
+            <Sudoku/>
+          </Suspense>
+        } />
       </Routes>
     </HashRouter>
   </React.StrictMode>

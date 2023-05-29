@@ -3,6 +3,8 @@ import produce from 'immer';
 
 import '../styles/gameoflife.css';
 
+import getPattern from '../components/gameoflife_patterns';
+
 const Gameoflife = () => {
 
     const [grid, setGrid] = useState(() => {
@@ -19,6 +21,30 @@ const Gameoflife = () => {
     const [prevGridList, setPrevGridList] = useState([]);
     const [start, setStart] = useState(false);
     const [initialGrid, setInitialGrid] = useState([]);
+
+    const [enablePattern, setEnablePattern] = useState(false);
+
+    const setPattern = (pattern) => {
+        let t_pattern = getPattern(pattern);
+        let patternArray = t_pattern.pattern;
+        let padding = t_pattern.padding;
+        const newGrid = produce(grid, gridCopy => {
+            for(let i = 0; i < grid.length; i++){
+                for(let k = 0; k < grid[i].length; k++){
+                    gridCopy[i][k] = 0;
+                }
+            }
+
+            for(let i = 0; i < patternArray.length; i++){
+                for(let k = 0; k < patternArray[i].length; k++){
+                    if(patternArray[i][k] === 1){
+                        gridCopy[i + padding][k + padding] = 1;
+                    }
+                }
+            }
+        });
+        setGrid(newGrid);
+    }
 
     const stopInterval = () => {   
         clearInterval(myInterval);
@@ -131,6 +157,21 @@ const Gameoflife = () => {
                 </div>
                 <div style={{display: "grid"}}>
                     <button className='button' onClick={() => { setStart(true);}}>Run</button>
+                    <div>
+                        <select className='select' onChange={(e) => setPattern(e.target.value)}>
+                            <option value="none">Please Select An Option</option>
+                            <option value="glider">Glider</option>
+                            <option value="small_exploder">Small Exploder</option>
+                            <option value="exploder">Exploder</option>
+                            <option value="10_cell_row">10 Cell Row</option>
+                            <option value="lightweight_spaceship">Lightweight Spaceship</option>
+                            <option value="tumbler">Tumbler</option>
+                            <option value="gosper_glider_gun">Gosper Glider Gun</option>
+                            <option value="pulsar">Pulsar</option>
+                            <option value="r_pentomino">R-pentomino</option>
+                            <option value="coe_ship">Coe Ship</option>
+                        </select>
+                    </div>
                     <button className='button' onClick={() => { stopInterval(); }}>Stop</button>
                     <button className='button' onClick={() => { returnToInitialGrid(); }}>Set initial state</button>
                     <button className='button' onClick={() => { clearGrid(); }}>Clear Grid</button>
