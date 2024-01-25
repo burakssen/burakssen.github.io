@@ -18,6 +18,10 @@ export const getHelp = () => {
                     <td>Shows this help message</td>
                 </tr>
                 <tr>
+                    <td style={{ width: "35vh" }}>neofetch</td>
+                    <td>Shows information about me 😁</td>
+                </tr>
+                <tr>
                     <td style={{ width: "35vh" }}>clear</td>
                     <td>Clears the screen</td>
                 </tr>

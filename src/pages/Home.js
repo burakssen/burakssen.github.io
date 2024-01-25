@@ -6,6 +6,9 @@ import { getProfessionalExperience } from "../components/professional_experience
 import { getProjects } from "../components/projects.js"
 import { getHelp } from "../components/help.js"
 import { getOrganizations } from "../components/organizations.js";
+import { getNeofetch } from "../components/neofetch.js";
+
+
 
 
 const Home = () => {
@@ -37,6 +40,12 @@ const Home = () => {
         setConversationList([...conversationList, {
           prompt: getPromptString("help", false), 
           response: getHelp()
+        }]);
+        break;
+      case "neofetch":
+        setConversationList([...conversationList, {
+          prompt: getPromptString("neofetch", false), 
+          response: getNeofetch()
         }]);
         break;
       case "clear":
