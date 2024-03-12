@@ -34,7 +34,7 @@ const Home = () => {
         <div>
           <span className="color-prompt-white">╭─</span>
           <span className="color-prompt-green">
-            burakssen@burakssen.github.io
+            burakssen@burakssen.com
           </span>{" "}
           <span className="color-prompt-purple">~</span>
         </div>
