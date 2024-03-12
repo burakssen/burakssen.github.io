@@ -53,7 +53,7 @@ export const getHelp = () => {
         </tbody>
       </table>
       <br />
-      Available demos:
+      Depracated: Available demos: (more work will be done for this. I need to handle small screen devices and I think currently demos has some bugs. I will fix them soon.)
       <table style={{ paddingLeft: "5vh" }}>
         <thead>
           <tr>

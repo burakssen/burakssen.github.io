@@ -17,7 +17,15 @@ root.render(
             <Home/>
           </Suspense>
         } />
-        <Route path="/gameoflife" element={
+        
+      </Routes>
+    </HashRouter>
+  </React.StrictMode>
+);
+
+/*
+// currently not working
+<Route path="/gameoflife" element={
           <Suspense fallback={<div></div>}>
             <Gameoflife/>
           </Suspense>
@@ -27,10 +35,7 @@ root.render(
             <Sudoku/>
           </Suspense>
         } />
-      </Routes>
-    </HashRouter>
-  </React.StrictMode>
-);
+*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

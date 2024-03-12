@@ -133,12 +133,12 @@ const Home = () => {
           },
         ]);
         break;
-      case "gameoflife":
+      /*case "gameoflife":
         window.location.href = "/#/gameoflife";
         break;
       case "sudoku":
         window.location.href = "/#/sudoku";
-        break;
+        break;*/
       case "":
         setConversationList([
           ...conversationList,
