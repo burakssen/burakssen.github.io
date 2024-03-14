@@ -11,7 +11,7 @@ export const getProjects = () => {
                 <tbody>
                   <tr>
                     <td style={{width: "35vh"}}>February 2024 - March 2024</td>
-                    <td><a className="link" href="/kanban-board"><b>🔗 Kanban Board</b></a></td>
+                    <td><a className="link" href="https://burakssen.github.io/kanban-board"><b>🔗 Kanban Board</b></a></td>
                   </tr>
                   <tr>
                     <td></td>
