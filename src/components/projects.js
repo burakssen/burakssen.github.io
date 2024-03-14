@@ -10,6 +10,26 @@ export const getProjects = () => {
                 </thead>
                 <tbody>
                   <tr>
+                    <td style={{width: "35vh"}}>February 2024 - March 2024</td>
+                    <td><a className="link" href="/kanban-board"><b>🔗 Kanban Board</b></a></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>A simple kanban board with add/remove/edit functionaliy</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td style={{paddingLeft: "20px"}}><li>Developed <b>a simple kanban board</b> that allows users to <b>add, remove, edit</b> and <b>drag and drop</b> tasks between columns.</li></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td style={{paddingLeft: "20px"}}><li>Implemented with <b>NextJS, Framer-Motiont</b> and <b>Typescript.</b></li></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td style={{paddingLeft: "20px"}}><li>Currently there is no database is hooked up. It stores its data on browser.</li></td>
+                  </tr>
+                  <tr>
                     <td style={{width: "35vh"}}>September 2022 - June 2022</td>
                     <td><a className="link" href="https://github.com/burakssen/ModernWarSimulator"><b>🔗 Modern War Simulator</b></a></td>
                   </tr>
