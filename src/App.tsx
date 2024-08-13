@@ -34,7 +34,7 @@ function App() {
           ))}
         </div>
         <div className="p-2 mt-5">
-          Would you like to have my resume? <a href="https://burakssen.github.io/cv.pdf">Click here and download.</a>
+          Would you like to have my resume? <a href="./cv.pdf">Click here and download.</a>
         </div>
       </div>
       <div className="lg:basis-1/4 sm:w-0 p-4">
