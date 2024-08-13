@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SiInstagram, SiGithub, SiLinkedin } from "@icons-pack/react-simple-icons";
-import {Mail} from "lucide-react";
+import { Mail } from "lucide-react";
 
 const socialmediaprops = {
     profile_image: "https://avatars.githubusercontent.com/u/43742977",
@@ -22,8 +22,8 @@ const socialmediaprops = {
 const SocialMediaCard = () => {
     return (
         <div className="border border-gray-300 rounded-lg p-6 shadow-md mx-auto">
-            <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-6">
+            <div className="sm:flex flex-col sm:flex-row items-center justify-between">
+                <div className="flex items-center space-x-6 mb-4 sm:mb-0">
                     <Avatar className="w-24 h-24">
                         <AvatarImage src={socialmediaprops.profile_image} alt={socialmediaprops.username} className="w-full h-full object-cover" />
                         <AvatarFallback className="w-full h-full flex items-center justify-center">
@@ -32,7 +32,7 @@ const SocialMediaCard = () => {
                     </Avatar>
                     <div>
                         <h1 className="text-2xl font-bold">
-                            {socialmediaprops.firstname} {socialmediaprops.lastname} 
+                            {socialmediaprops.firstname} {socialmediaprops.lastname}
                             <span className="text-zinc-700 text-md font-medium pl-1">@{socialmediaprops.username}</span>
                         </h1>
                         <p className="text-gray-700 mt-1">
@@ -40,7 +40,7 @@ const SocialMediaCard = () => {
                         </p>
                     </div>
                 </div>
-                <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-6 mt-4 sm:mt-0">
                     <a 
                         href={socialmediaprops.social_media.github} 
                         target="_blank" 
