@@ -6,6 +6,7 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 const recentWorks: Item[] = [
     {
         title: "Animation System",
+        url: "https://github.com/burakssen/animation_system",
         date: "August 2024",
         subtitle: "A simple *animation system* for games using *C++, Raylib and EnTT*",
         content: "This is a simple animation system for games built using C++, Raylib and EnTT. It allows you to *create and manage animations* for game objects in a *simple and efficient way*.",
