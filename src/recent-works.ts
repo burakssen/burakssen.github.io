@@ -1,9 +1,17 @@
 import { Item } from "./components/project-card";
-import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib } from "@icons-pack/react-simple-icons";
+import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib,SiVite,SiReact,SiShadcnui,SiTailwindcss } from "@icons-pack/react-simple-icons";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 
 const recentWorks: Item[] = [
+    {
+        title: "Sorting Visualizer",
+        date: "August 2024",
+        url: "https://burakssen.github.com/sorting-visualizer",
+        subtitle: "*A sorting visualizer* using *ReactJS, Vite, Shadcn and Tailwindcss*",
+        content: "This is a sorting visualizer built using ReactJS, Vite, Shadcn and Tailwindcss. It allows you to *visualize different sorting algorithms* in action.",
+        usedTechnologies: [SiReact, SiTypescript,SiVite,SiShadcnui,SiTailwindcss],
+    },
     {
         title: "Animation System",
         url: "https://github.com/burakssen/animation_system",
