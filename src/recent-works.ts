@@ -7,7 +7,7 @@ const recentWorks: Item[] = [
     {
         title: "Sorting Visualizer",
         date: "August 2024",
-        url: "https://burakssen.github.com/sorting-visualizer",
+        url: "https://burakssen.github.io/sorting-visualiser",
         subtitle: "*A sorting visualizer* using *ReactJS, Vite, Shadcn and Tailwindcss*",
         content: "This is a sorting visualizer built using ReactJS, Vite, Shadcn and Tailwindcss. It allows you to *visualize different sorting algorithms* in action.",
         usedTechnologies: [SiReact, SiTypescript,SiVite,SiShadcnui,SiTailwindcss],
