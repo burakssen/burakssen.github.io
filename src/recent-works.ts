@@ -10,7 +10,7 @@ const recentWorks: Item[] = [
         url: "https://burakssen.github.io/blog",
         subtitle: "*A blog page* using *ReactJS, Typescript, Mdxjs, Vite and Tailwindcss*",
         content: "This is a blog page built using ReactJS, Typescript, Mdxjs, Vite and Tailwindcss. It allows you to *write and publish blog posts* with *Markdown*.",
-        usedTechnologies: [SiReact, SiTypescript, SiMdx, SiMarkdown, SiVite, SiTailwindcss],
+        usedTechnologies: [SiReact, SiTypescript, SiMdx, SiMarkdown, SiVite, SiTailwindcss, SiShadcnui],
     },
     {
         title: "Sorting Visualizer",
