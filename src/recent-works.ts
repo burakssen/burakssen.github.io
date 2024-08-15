@@ -1,9 +1,17 @@
 import { Item } from "./components/project-card";
-import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib,SiVite,SiReact,SiShadcnui,SiTailwindcss } from "@icons-pack/react-simple-icons";
+import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib,SiVite,SiReact,SiShadcnui,SiTailwindcss, SiMdx,SiMarkdown } from "@icons-pack/react-simple-icons";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 
 const recentWorks: Item[] = [
+    {
+        title: "Blog Page",
+        date: "August 2024",
+        url: "https://burakssen.github.io/blog",
+        subtitle: "*A blog page* using *ReactJS, Typescript, Mdxjs, Vite and Tailwindcss*",
+        content: "This is a blog page built using ReactJS, Typescript, Mdxjs, Vite and Tailwindcss. It allows you to *write and publish blog posts* with *Markdown*.",
+        usedTechnologies: [SiReact, SiTypescript, SiMdx, SiMarkdown, SiVite, SiTailwindcss],
+    },
     {
         title: "Sorting Visualizer",
         date: "August 2024",
