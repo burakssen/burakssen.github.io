@@ -46,7 +46,7 @@ const recentWorks: Item[] = [
     },
     {
         title: "Kanban Board",
-        url: "https://github.com/burakssen/kanban-board",
+        url: "https://burakssen.com/kanban-board",
         date: "February 2024",
         subtitle: "A simple *Kanban board* app",
         content: "Kanban Board is a simple Kanban board app that allows you to *create and manage tasks* in a Kanban board style. It is a web app built with *NextJS, TypeScript and Framer Motion*.",
