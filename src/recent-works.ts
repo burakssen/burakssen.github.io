@@ -1,5 +1,5 @@
 import { Item } from "./components/project-card";
-import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib,SiVite,SiReact,SiShadcnui,SiTailwindcss, SiMdx,SiMarkdown, SiWebassembly, SiHtml5 } from "@icons-pack/react-simple-icons";
+import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib,SiVite,SiReact,SiShadcnui,SiTailwindcss, SiMdx,SiMarkdown, SiWebassembly, SiHtml5, SiGithubactions } from "@icons-pack/react-simple-icons";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 
@@ -41,8 +41,8 @@ const recentWorks: Item[] = [
         "url": "https://burakssen.com/boids",
         "date": "April 2024",
         "subtitle": "*A boids simulation* using *C++, Raylib and WebAssembly*",
-        "content": "This is a boids simulation built using C++, Raylib and WebAssembly. It allows you to *simulate boids* in a 2D environment.",
-        "usedTechnologies": [SiCplusplus, SiRaylib, SiCmake,SiWebassembly,SiHtml5],
+        "content": "Flocking behavior simulation using boids algorithm. It is built using C++, Raylib and WebAssembly.",
+        "usedTechnologies": [SiCplusplus, SiRaylib, SiCmake,SiWebassembly,SiHtml5,SiGithubactions],
     },
     {
         title: "Kanban Board",
