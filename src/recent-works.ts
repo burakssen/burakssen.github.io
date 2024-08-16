@@ -1,5 +1,5 @@
 import { Item } from "./components/project-card";
-import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib,SiVite,SiReact,SiShadcnui,SiTailwindcss, SiMdx,SiMarkdown } from "@icons-pack/react-simple-icons";
+import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib,SiVite,SiReact,SiShadcnui,SiTailwindcss, SiMdx,SiMarkdown, SiWebassembly, SiHtml5 } from "@icons-pack/react-simple-icons";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 
@@ -35,6 +35,14 @@ const recentWorks: Item[] = [
         subtitle: "*A macOS utility app* to *quit* all apps at once",
         content: "QuitMe is a macOS utility app that allows you to *quit all running apps* at once. It is a *simple application* which sits in *the menu bar* and provides a *shortcut* to quit all apps.",
         usedTechnologies: [SiSwift],
+    },
+    {
+        "title": "Boids",
+        "url": "https://burakssen/boids",
+        "date": "April 2024",
+        "subtitle": "*A boids simulation* using *C++, Raylib and WebAssembly*",
+        "content": "This is a boids simulation built using C++, Raylib and WebAssembly. It allows you to *simulate boids* in a 2D environment.",
+        "usedTechnologies": [SiCplusplus, SiRaylib, SiCmake,SiWebassembly,SiHtml5],
     },
     {
         title: "Kanban Board",
