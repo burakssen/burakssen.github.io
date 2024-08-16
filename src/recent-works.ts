@@ -38,7 +38,7 @@ const recentWorks: Item[] = [
     },
     {
         "title": "Boids",
-        "url": "https://burakssen/boids",
+        "url": "https://burakssen.com/boids",
         "date": "April 2024",
         "subtitle": "*A boids simulation* using *C++, Raylib and WebAssembly*",
         "content": "This is a boids simulation built using C++, Raylib and WebAssembly. It allows you to *simulate boids* in a 2D environment.",
