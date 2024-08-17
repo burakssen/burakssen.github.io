@@ -5,9 +5,9 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 
 const recentWorks: Item[] = [
     {
-        title: "3D Terrain Generator",
+        title: "3D Terrain Generation",
         date: "August 2024",
-        url: "https://burakssen.github.io/3d-terrain-generator",
+        url: "https://burakssen.github.io/3d-terrain-generation",
         subtitle: "*A 3D terrain generator* using *C++, Raylib and WebAssembly*",
         content: "This is a 3D terrain generator built using C++, Raylib and WebAssembly. Its an infinitly scrolling procedurally generated terrain mesh*.",
         usedTechnologies: [SiCplusplus, SiRaylib, SiCmake,SiWebassembly,SiHtml5,SiGithubactions],
