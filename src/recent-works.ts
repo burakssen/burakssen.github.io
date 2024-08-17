@@ -45,12 +45,12 @@ const recentWorks: Item[] = [
         usedTechnologies: [SiSwift],
     },
     {
-        "title": "Boids",
+        "title": "Boids - Inverse Kinematics",
         "url": "https://burakssen.com/boids",
         "date": "April 2024",
-        "subtitle": "*A boids simulation* using *C++, Raylib and WebAssembly*",
-        "content": "Flocking behavior simulation using boids algorithm. It is built using C++, Raylib and WebAssembly.",
-        "usedTechnologies": [SiCplusplus, SiRaylib, SiCmake,SiWebassembly,SiHtml5,SiGithubactions],
+        "subtitle": "*A boids simulation* using *C++, Raylib and WebAssembly.* It also includes *Inverse Kinematics*.",
+        "content": "Flocking behavior simulation using boids algorithm. It is built using C++, Raylib and WebAssembly. It also includes Inverse Kinematics for fish movements.",
+        "usedTechnologies": [SiCplusplus, SiRaylib, SiCmake, SiWebassembly,SiHtml5,SiGithubactions],
     },
     {
         title: "Kanban Board",
