@@ -15,7 +15,8 @@ import {
     SiR,
     SiDotnet,
     SiMicrosoftsqlserver,
-    SiYaml
+    SiYaml,
+    SiGitlab
 } from "@icons-pack/react-simple-icons";
 import { FaJava } from "react-icons/fa";
 
@@ -26,7 +27,7 @@ const recentProfessionalExperiences: Item[] = [
         date: "July 2024 - Present",
         subtitle: "*TUM Commonroad*",
         content: "Working as a *Full Stack Software Engineer* at TUM Commonroad. Developing *web applications using React, Node.js, and Javascript*. Building *RESTful APIs and microservices*.",
-        usedTechnologies: [SiReact, SiJavascript, SiPython, SiDjango, SiPostgresql, SiDocker],
+        usedTechnologies: [SiReact, SiJavascript, SiPython, SiDjango, SiPostgresql, SiDocker, SiGitlab],
     },
     {
         title: "Assistant Student - Software Engineer",
