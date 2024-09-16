@@ -62,6 +62,7 @@ const recentWorks: Item[] = [
     },
     {
         title: "Path Finding Visualizer",
+        url: "https://github.com/burakssen/path_finding_visualiser",
         date: "January 2024",
         subtitle: "*A path finding visualizer* using *C++ and Raylib*",
         content: "This is a path finding visualizer built using C++ and Raylib. It allows you to *visualize different path finding algorithms* in action.",
