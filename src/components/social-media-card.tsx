@@ -74,7 +74,7 @@ const SocialMediaCard = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center space-x-6 mt-4 sm:mt-0">
+        <div className="flex items-center justify-evenly space-x-6 mt-4 sm:mt-0">
           {socialmediaprops.social_media.map((social, index) => (
             <a
               key={index}
