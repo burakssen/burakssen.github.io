@@ -1,16 +1,24 @@
 import { Item } from "./components/project-card";
-import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib,SiVite,SiReact,SiShadcnui,SiTailwindcss, SiMdx,SiMarkdown, SiWebassembly, SiHtml5, SiGithubactions } from "@icons-pack/react-simple-icons";
+import { SiSwift, SiTypescript, SiNextdotjs, SiCplusplus, SiCmake, SiRaylib, SiVite, SiReact, SiShadcnui, SiTailwindcss, SiMdx, SiMarkdown, SiWebassembly, SiHtml5, SiGithubactions, SiCss3, SiWebpack } from "@icons-pack/react-simple-icons";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 
 const recentWorks: Item[] = [
+    {
+        title: "Maze Solver",
+        date: "November 2024",
+        url: "https://burakssen.github.io/maze-solver",
+        subtitle: "*A maze solving visualier* using Typescript, Html5 and CSS",
+        content: "This is a maze solving visualizer built using Typescript, Html5 and CSS. It allows you to *visualize different maze solving algorithms* in action. Its implemented with HTML5 canvas.",
+        usedTechnologies: [SiTypescript, SiHtml5, SiGithubactions, SiCss3, SiWebpack],
+    },
     {
         title: "3D Terrain Generation",
         date: "August 2024",
         url: "https://burakssen.github.io/3d-terrain-generation",
         subtitle: "*A 3D terrain generator* using *C++, Raylib and WebAssembly*",
         content: "This is a 3D terrain generator built using C++, Raylib and WebAssembly. Its an infinitly scrolling procedurally generated terrain mesh*.",
-        usedTechnologies: [SiCplusplus, SiRaylib, SiCmake,SiWebassembly,SiHtml5,SiGithubactions],
+        usedTechnologies: [SiCplusplus, SiRaylib, SiCmake, SiWebassembly, SiHtml5, SiGithubactions],
     },
     {
         title: "Blog Page",
@@ -26,7 +34,7 @@ const recentWorks: Item[] = [
         url: "https://burakssen.github.io/sorting-visualiser",
         subtitle: "*A sorting visualizer* using *ReactJS, Vite, Shadcn and Tailwindcss*",
         content: "This is a sorting visualizer built using ReactJS, Vite, Shadcn and Tailwindcss. It allows you to *visualize different sorting algorithms* in action.",
-        usedTechnologies: [SiReact, SiTypescript,SiVite,SiShadcnui,SiTailwindcss],
+        usedTechnologies: [SiReact, SiTypescript, SiVite, SiShadcnui, SiTailwindcss],
     },
     {
         title: "Animation System",
@@ -50,7 +58,7 @@ const recentWorks: Item[] = [
         "date": "April 2024",
         "subtitle": "*A boids simulation* using *C++, Raylib and WebAssembly.* It also includes *Inverse Kinematics*.",
         "content": "Flocking behavior simulation using boids algorithm. It is built using C++, Raylib and WebAssembly. It also includes Inverse Kinematics for fish movements.",
-        "usedTechnologies": [SiCplusplus, SiRaylib, SiCmake, SiWebassembly,SiHtml5,SiGithubactions],
+        "usedTechnologies": [SiCplusplus, SiRaylib, SiCmake, SiWebassembly, SiHtml5, SiGithubactions],
     },
     {
         title: "Kanban Board",
