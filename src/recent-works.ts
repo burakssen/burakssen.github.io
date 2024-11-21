@@ -10,7 +10,7 @@ const recentWorks: Item[] = [
         url: "https://burakssen.github.io/maze-solver",
         subtitle: "*A maze solving visualizer* using Typescript, Html5 and CSS",
         content: "This is a maze solving visualizer built using Typescript, Html5 and CSS. It allows you to *visualize different maze solving algorithms* in action. Its implemented with HTML5 canvas.",
-        usedTechnologies: [SiTypescript, SiHtml5, SiGithubactions, SiCss3, SiWebpack],
+        usedTechnologies: [SiTypescript, SiHtml5, SiCss3, SiGithubactions, SiWebpack],
     },
     {
         title: "3D Terrain Generation",
