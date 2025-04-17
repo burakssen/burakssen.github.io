@@ -4,7 +4,7 @@ import {
   SiGithub,
   SiLinkedin,
 } from "@icons-pack/react-simple-icons";
-import { Mail, File } from "lucide-react";
+import { Mail, FileText, MapPin } from "lucide-react";
 
 const socialmediaprops = {
   profile_image: "https://avatars.githubusercontent.com/u/43742977",
@@ -16,27 +16,32 @@ const socialmediaprops = {
     {
       url: "https://github.com/burakssen",
       icon: SiGithub,
-      style: "w-8 h-8 text-blue-600 hover:text-blue-800",
+      style:
+        "w-6 h-6 text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-all",
     },
     {
       url: "https://www.linkedin.com/in/burakssen/",
       icon: SiLinkedin,
-      style: "w-8 h-8 text-blue-500 hover:text-blue-700",
+      style:
+        "w-6 h-6 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-all",
     },
     {
       url: "https://www.instagram.com/burakssen/",
       icon: SiInstagram,
-      style: "w-8 h-8 text-pink-500 hover:text-pink-700",
+      style:
+        "w-6 h-6 text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 transition-all",
     },
     {
       url: "mailto:buraksen7@hotmail.com",
       icon: Mail,
-      style: "w-8 h-8 text-red-500 hover:text-red-700",
+      style:
+        "w-6 h-6 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-all",
     },
     {
       url: "https://burakssen.com/cv.pdf",
-      icon: File,
-      style: "w-8 h-8 text-green-500 hover:text-green-700",
+      icon: FileText,
+      style:
+        "w-6 h-6 text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-all",
     },
   ],
   location: {
@@ -47,45 +52,70 @@ const socialmediaprops = {
 
 const SocialMediaCard = () => {
   return (
-    <div className="border border-gray-300 rounded-lg p-6 shadow-md mx-auto">
-      <div className="sm:flex flex-col sm:flex-row items-center justify-between">
-        <div className="flex items-center space-x-6 mb-4 sm:mb-0">
-          <Avatar className="w-24 h-24">
-            <AvatarImage
-              src={socialmediaprops.profile_image}
-              alt={socialmediaprops.username}
-              className="w-full h-full object-cover hover:opacity-80 hover:shadow-lg"
-            />
-            <AvatarFallback className="w-full h-full flex items-center justify-center">
-              {socialmediaprops.username}
-            </AvatarFallback>
-          </Avatar>
-          <div>
-            <h1 className="text-2xl font-bold">
-              {socialmediaprops.firstname} {socialmediaprops.lastname}
-              <span className="text-zinc-700 text-md font-medium pl-1">
-                @{socialmediaprops.username}
-              </span>
-            </h1>
-            <p className="text-gray-700 mt-1">
-              <span className="text-xl font-semibold text-blue-600 rounded-md">
-                {socialmediaprops.bio}
-              </span>
-            </p>
+    <div className="w-full bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-md">
+      {/* Top border */}
+      <div className="h-2 bg-black dark:bg-white w-full"></div>
+
+      <div className="p-4 sm:p-6 md:p-8 w-full">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 w-full">
+          {/* Avatar - moved to left on all screen sizes */}
+          <div className="shrink-0">
+            <Avatar className="w-24 h-24 md:w-28 md:h-28 rounded-full border-2 border-gray-300 dark:border-gray-700 shadow">
+              <AvatarImage
+                src={socialmediaprops.profile_image}
+                alt={socialmediaprops.username}
+                className="w-full h-full object-cover"
+              />
+              <AvatarFallback className="text-2xl font-bold text-black dark:text-white bg-gray-100 dark:bg-gray-900">
+                {socialmediaprops.firstname[0]}
+                {socialmediaprops.lastname[0]}
+              </AvatarFallback>
+            </Avatar>
           </div>
-        </div>
-        <div className="flex items-center justify-evenly space-x-6 mt-4 sm:mt-0">
-          {socialmediaprops.social_media.map((social, index) => (
-            <a
-              key={index}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform transform hover:scale-110"
-            >
-              <social.icon className={social.style} />
-            </a>
-          ))}
+
+          {/* Info section */}
+          <div className="flex-1 w-full">
+            <div className="flex flex-col gap-3 text-center sm:text-left w-full">
+              {/* Name and bio */}
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold text-black dark:text-white">
+                  {socialmediaprops.firstname} {socialmediaprops.lastname}
+                </h1>
+                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mt-1">
+                  {socialmediaprops.bio}
+                </p>
+              </div>
+
+              {/* Location and username */}
+              <div className="flex flex-wrap justify-center sm:justify-start items-center gap-x-4 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex items-center">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  <span>
+                    {socialmediaprops.location.city},{" "}
+                    {socialmediaprops.location.country}
+                  </span>
+                </div>
+                <span className="hidden sm:inline">•</span>
+                <span>@{socialmediaprops.username}</span>
+              </div>
+
+              {/* Social media icons */}
+              <div className="flex justify-center sm:justify-start gap-4 mt-2">
+                {socialmediaprops.social_media.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:scale-110 transition-transform"
+                    aria-label={`Visit ${social.url}`}
+                  >
+                    <social.icon className={social.style} />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

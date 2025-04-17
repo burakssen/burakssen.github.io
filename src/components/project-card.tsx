@@ -12,14 +12,18 @@ type Item = {
 };
 
 const ProjectCard = ({ project }: { project: Item }) => {
-  const renderWithBold = (subtitle: string) => {
-    const parts = subtitle.split("*");
+  const renderWithBold = (text: string) => {
+    const parts = text.split("*");
     return (
       <span>
         {parts.map((part, index) => (
           <span
             key={index}
-            className={index % 2 === 0 ? "text-zinc-400" : "text-white"}
+            className={
+              index % 2 === 0
+                ? "text-gray-600 dark:text-gray-400"
+                : "font-medium text-black dark:text-white"
+            }
           >
             {part}
           </span>
@@ -29,29 +33,41 @@ const ProjectCard = ({ project }: { project: Item }) => {
   };
 
   return (
-    <div className="flex items-start border-l-4 border-white pl-2">
-      <div className="flex-shrink-0 w-1 bg-white"></div>
-      <div className="flex-1">
-        <h3 className="flex text-xl font-semibold justify-between items-center">
-          {project.url ? (
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-zinc-300 flex items-center"
-            >
-              <p>{project.title}</p> <FaLink className="w-4 h-4 ml-2" />
-            </a>
-          ) : (
-            <p>{project.title}</p>
-          )}
-          <p className="text-zinc-300 mt-1 text-sm">{project.date}</p>
-        </h3>
-        <p className="text-zinc-400 mt-1">{renderWithBold(project.subtitle)}</p>
-        <p className="text-zinc-400 mt-1">{renderWithBold(project.content)}</p>
-        <div className="flex mt-2">
+    <div className="relative pl-6 border-l-2 border-black dark:border-white">
+      <div className="absolute w-3 h-3 bg-black dark:bg-white rounded-full left-[-7px] top-2"></div>
+      <div>
+        {/* Improved header section for small screens */}
+        <div className="flex flex-col mb-2">
+          <h3 className="text-xl font-semibold text-black dark:text-white mb-1">
+            {project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-600 dark:hover:text-gray-300 flex items-center"
+              >
+                {project.title} <FaLink className="w-4 h-4 ml-2 opacity-70" />
+              </a>
+            ) : (
+              project.title
+            )}
+          </h3>
+          <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+            {project.date}
+          </p>
+        </div>
+
+        <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
+          {renderWithBold(project.subtitle)}
+        </p>
+
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
+          {renderWithBold(project.content)}
+        </p>
+
+        <div className="flex flex-wrap gap-3">
           {project.usedTechnologies.map((Icon, index) => (
-            <Icon key={index} className="w-6 h-6 text-white mr-2" />
+            <Icon key={index} className="w-5 h-5 text-black dark:text-white" />
           ))}
         </div>
       </div>
