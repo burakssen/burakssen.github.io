@@ -43,6 +43,7 @@ function App() {
                 <SiVite className="w-8 h-8 text-purple-600" />
                 <SiShadcnui className="w-8 h-8 text-gray-600 dark:text-gray-300" />
                 <SiTailwindcss className="w-8 h-8 text-cyan-500" />
+                <SiZig className="w-8 h-8 text-[#F7A41E]" />
               </div>
             </div>
             <div className="bg-gray-50 dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800 p-6 transition hover:shadow-md">
