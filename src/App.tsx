@@ -15,6 +15,7 @@ import {
   SiMake,
   SiSwift,
   SiRaylib,
+  SiZig,
 } from "@icons-pack/react-simple-icons";
 import { Download } from "lucide-react";
 
@@ -55,6 +56,7 @@ function App() {
                 <SiCmake className="w-8 h-8 text-red-500" />
                 <SiMake className="w-8 h-8 text-amber-600" />
                 <SiSwift className="w-8 h-8 text-orange-500" />
+                <SiZig className="w-8 h-8 text-[#F7A41E]" />
               </div>
             </div>
           </div>
