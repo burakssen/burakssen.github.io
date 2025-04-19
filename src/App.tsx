@@ -60,13 +60,13 @@ function App() {
           </div>
         </div>
 
-        {/* Projects Section */}
+        {/* Professional Experience Section */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-black dark:text-white mb-6">
-            Recent Projects
+            Professional Experience
           </h2>
           <div className="space-y-6">
-            {recentWorks.map((project) => (
+            {recentProfessionalExperiences.map((project) => (
               <div
                 key={project.title}
                 className="bg-gray-50 dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800 p-6 transition hover:shadow-md"
@@ -77,13 +77,13 @@ function App() {
           </div>
         </div>
 
-        {/* Professional Experience Section */}
+        {/* Projects Section */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-black dark:text-white mb-6">
-            Professional Experience
+            Recent Projects
           </h2>
           <div className="space-y-6">
-            {recentProfessionalExperiences.map((project) => (
+            {recentWorks.map((project) => (
               <div
                 key={project.title}
                 className="bg-gray-50 dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800 p-6 transition hover:shadow-md"
