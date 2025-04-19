@@ -20,13 +20,13 @@ const socialmediaprops = {
         "w-6 h-6 text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-all",
     },
     {
-      url: "https://www.linkedin.com/in/burakssen/",
+      url: "https://www.linkedin.com/in/burak-ssen/",
       icon: SiLinkedin,
       style:
         "w-6 h-6 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-all",
     },
     {
-      url: "https://www.instagram.com/burakssen/",
+      url: "https://www.instagram.com/burak.ssen/",
       icon: SiInstagram,
       style:
         "w-6 h-6 text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 transition-all",
