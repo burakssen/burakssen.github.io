@@ -20,18 +20,19 @@ import {
   SiAnsible,
   SiGithubactions,
   SiZig,
+  SiOnnx,
 } from "@icons-pack/react-simple-icons";
 import { FaJava } from "react-icons/fa";
 
 const recentProfessionalExperiences: Item[] = [
   {
     title: "Z-Ant",
-    date: "April 2025 - Present",
+    date: "April 2025 - July 2025",
     url: "https://github.com/ZantFoundation/Z-Ant",
     subtitle: "Zant Foundation - *Z-Ant*",
     content:
       "Working as a *volunteer software engineer* at Zant Foundation. Developing *Z-Ant*, a *Zig* based neural network library for microcontrollers.",
-    usedTechnologies: [SiZig, SiGithubactions],
+    usedTechnologies: [SiZig, SiGithubactions, SiOnnx],
   },
   {
     title: "Full Stack Software Engineer",
@@ -78,7 +79,7 @@ const recentProfessionalExperiences: Item[] = [
     usedTechnologies: [SiR],
   },
   {
-    title: "Software Development Intern",
+    title: "Software Development Intern ",
     date: "August 2021 - September 2021",
     url: "https://www.ibm.com/",
     subtitle: "IBM",

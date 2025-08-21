@@ -18,10 +18,27 @@ import {
   SiCss3,
   SiWebpack,
   SiOpengl,
+  SiOnnx,
 } from "@icons-pack/react-simple-icons";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 const recentWorks: Item[] = [
+  {
+    title: "JAXFLUIDS Simulation with TUMAER",
+    date: "April 2025",
+    url: "https://burakssen.github.io/jaxfluids-simulation",
+    subtitle: "*A visual runtime for JAXFLUIDS framework examples*",
+    content:
+      "This is a visual runtime for JAXFLUIDS framework examples. It allows you to *simulate fluid dynamics* in real-time using onnx models.",
+    usedTechnologies: [
+      SiReact,
+      SiTypescript,
+      SiVite,
+      SiTailwindcss,
+      SiOnnx,
+      SiWebassembly,
+    ],
+  },
   {
     title: "Flip-Fluid Simulation",
     date: "March 2025",

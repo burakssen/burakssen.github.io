@@ -1,7 +1,6 @@
 import { IconType } from "@icons-pack/react-simple-icons";
 import { IconBase } from "react-icons";
-import { FaLink } from "react-icons/fa";
-
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 type Item = {
   title: string;
   date: string;
@@ -9,21 +8,23 @@ type Item = {
   content: string;
   usedTechnologies: (IconType | typeof IconBase)[];
   url?: string;
+  githubUrl?: string;
 };
 
 const ProjectCard = ({ project }: { project: Item }) => {
   const renderWithBold = (text: string) => {
+    if (!text) return null;
     const parts = text.split("*");
     return (
       <span>
         {parts.map((part, index) => (
           <span
             key={index}
-            className={
+            className={`transition-colors ${
               index % 2 === 0
-                ? "text-gray-600 dark:text-gray-400"
-                : "font-medium text-black dark:text-white"
-            }
+                ? "text-zinc-600 dark:text-zinc-300"
+                : "font-medium text-zinc-900 dark:text-zinc-100"
+            }`}
           >
             {part}
           </span>
@@ -33,44 +34,70 @@ const ProjectCard = ({ project }: { project: Item }) => {
   };
 
   return (
-    <div className="relative pl-6 border-l-2 border-black dark:border-white">
-      <div className="absolute w-3 h-3 bg-black dark:bg-white rounded-full left-[-7px] top-2"></div>
-      <div>
-        {/* Improved header section for small screens */}
-        <div className="flex flex-col mb-2">
-          <h3 className="text-xl font-semibold text-black dark:text-white mb-1">
-            {project.url ? (
+    <div className="relative overflow-hidden rounded-2xl bg-white/50 dark:bg-zinc-800/30 backdrop-blur-sm border border-zinc-200/80 dark:border-zinc-700/80">
+      
+      <div className="p-6">
+        {/* Header */}
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-100 dark:to-zinc-300 bg-clip-text text-transparent">
+              {project.title}
+            </h3>
+            <span className="inline-block mt-1 text-sm font-medium text-zinc-500 dark:text-zinc-400">
+              {project.date}
+            </span>
+          </div>
+          
+          <div className="flex items-center space-x-1">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 -m-1.5 rounded-full text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                aria-label="GitHub Repository"
+              >
+                <FaGithub className="w-4 h-4" />
+              </a>
+            )}
+            {project.url && (
               <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-600 dark:hover:text-gray-300 flex items-center"
+                className="p-2 -m-1.5 rounded-full text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                aria-label="Live Demo"
               >
-                {project.title} <FaLink className="w-4 h-4 ml-2 opacity-70" />
+                <FaExternalLinkAlt className="w-4 h-4" />
               </a>
-            ) : (
-              project.title
             )}
-          </h3>
-          <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-            {project.date}
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="mt-4 space-y-3">
+          <p className="text-zinc-800 dark:text-zinc-100 leading-relaxed">
+            {renderWithBold(project.subtitle)}
+          </p>
+          <p className="text-sm text-zinc-700 dark:text-zinc-300">
+            {renderWithBold(project.content)}
           </p>
         </div>
 
-        <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
-          {renderWithBold(project.subtitle)}
-        </p>
-
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
-          {renderWithBold(project.content)}
-        </p>
-
-        <div className="flex flex-wrap gap-3">
-          {project.usedTechnologies.map((Icon, index) => (
-            <Icon key={index} className="w-5 h-5 text-black dark:text-white" />
-          ))}
-        </div>
+        {/* Technologies */}
+        {project.usedTechnologies.length > 0 && (
+          <div className="mt-2">
+            <div className="flex flex-wrap gap-1.5">
+              {project.usedTechnologies.map((Icon, index) => (
+                <div key={index} className="p-1.5 flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-zinc-700 dark:text-zinc-300" />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
+
     </div>
   );
 };
