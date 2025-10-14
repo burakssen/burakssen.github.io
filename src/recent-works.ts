@@ -19,10 +19,21 @@ import {
   SiWebpack,
   SiOpengl,
   SiOnnx,
+  SiZig,
 } from "@icons-pack/react-simple-icons";
+
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 const recentWorks: Item[] = [
+  {
+    title: "Chess Game",
+    date: "October 2025",
+    url: "https://burakssen.github.io/chess",
+    subtitle: "*A chess game* using *Zig, Raylib and WebAssembly*",
+    content:
+      "This is a chess game built using Zig, Raylib and WebAssembly. It allows you to *play chess* against another player (Not online unfortunately).",
+    usedTechnologies: [SiZig, SiRaylib, SiWebassembly],
+  },
   {
     title: "JAXFLUIDS Simulation with TUMAER",
     date: "April 2025",
