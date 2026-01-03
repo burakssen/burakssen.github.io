@@ -32,7 +32,11 @@ const recentWorks: Item[] = [
     subtitle: "*A chess game* using *Zig, Raylib and WebAssembly*",
     content:
       "This is a chess game built using Zig, Raylib and WebAssembly. It allows you to *play chess* against another player (Not online unfortunately).",
-    usedTechnologies: [SiZig, SiRaylib, SiWebassembly],
+    usedTechnologies: [
+      { icon: SiZig, name: "Zig" },
+      { icon: SiRaylib, name: "Raylib" },
+      { icon: SiWebassembly, name: "WebAssembly" },
+    ],
   },
   {
     title: "JAXFLUIDS Simulation with TUMAER",
@@ -42,12 +46,12 @@ const recentWorks: Item[] = [
     content:
       "This is a visual runtime for JAXFLUIDS framework examples. It allows you to *simulate fluid dynamics* in real-time using onnx models.",
     usedTechnologies: [
-      SiReact,
-      SiTypescript,
-      SiVite,
-      SiTailwindcss,
-      SiOnnx,
-      SiWebassembly,
+      { icon: SiReact, name: "React" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiVite, name: "Vite" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
+      { icon: SiOnnx, name: "ONNX" },
+      { icon: SiWebassembly, name: "WebAssembly" },
     ],
   },
   {
@@ -59,13 +63,13 @@ const recentWorks: Item[] = [
     content:
       "This is arewrite for flip-fluid simulation for Matthias Müller's Ten Minute Physics series. Its rewritten with C++, it can be compile into both desktop application and web assembly version.",
     usedTechnologies: [
-      SiCplusplus,
-      SiRaylib,
-      SiOpengl,
-      SiCmake,
-      SiWebassembly,
-      SiGithubactions,
-      SiHtml5,
+      { icon: SiCplusplus, name: "C++" },
+      { icon: SiRaylib, name: "Raylib" },
+      { icon: SiOpengl, name: "OpenGL" },
+      { icon: SiCmake, name: "CMake" },
+      { icon: SiWebassembly, name: "WebAssembly" },
+      { icon: SiGithubactions, name: "GitHub Actions" },
+      { icon: SiHtml5, name: "HTML5" },
     ],
   },
   {
@@ -76,11 +80,11 @@ const recentWorks: Item[] = [
     content:
       "This is a maze solving visualizer built using Typescript, Html5 and CSS. It allows you to *visualize different maze solving algorithms* in action. Its implemented with HTML5 canvas.",
     usedTechnologies: [
-      SiTypescript,
-      SiHtml5,
-      SiCss3,
-      SiGithubactions,
-      SiWebpack,
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiHtml5, name: "HTML5" },
+      { icon: SiCss3, name: "CSS3" },
+      { icon: SiGithubactions, name: "GitHub Actions" },
+      { icon: SiWebpack, name: "Webpack" },
     ],
   },
   {
@@ -91,12 +95,12 @@ const recentWorks: Item[] = [
     content:
       "This is a 3D terrain generator built using C++, Raylib and WebAssembly. Its an infinitly scrolling procedurally generated terrain mesh*.",
     usedTechnologies: [
-      SiCplusplus,
-      SiRaylib,
-      SiCmake,
-      SiWebassembly,
-      SiHtml5,
-      SiGithubactions,
+      { icon: SiCplusplus, name: "C++" },
+      { icon: SiRaylib, name: "Raylib" },
+      { icon: SiCmake, name: "CMake" },
+      { icon: SiWebassembly, name: "WebAssembly" },
+      { icon: SiHtml5, name: "HTML5" },
+      { icon: SiGithubactions, name: "GitHub Actions" },
     ],
   },
   {
@@ -108,13 +112,13 @@ const recentWorks: Item[] = [
     content:
       "This is a blog page built using ReactJS, Typescript, Mdxjs, Vite and Tailwindcss. It allows you to *write and publish blog posts* with *Markdown*.",
     usedTechnologies: [
-      SiReact,
-      SiTypescript,
-      SiMdx,
-      SiMarkdown,
-      SiVite,
-      SiTailwindcss,
-      SiShadcnui,
+      { icon: SiReact, name: "React" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiMdx, name: "MDX" },
+      { icon: SiMarkdown, name: "Markdown" },
+      { icon: SiVite, name: "Vite" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
+      { icon: SiShadcnui, name: "shadcn/ui" },
     ],
   },
   {
@@ -126,11 +130,11 @@ const recentWorks: Item[] = [
     content:
       "This is a sorting visualizer built using ReactJS, Vite, Shadcn and Tailwindcss. It allows you to *visualize different sorting algorithms* in action.",
     usedTechnologies: [
-      SiReact,
-      SiTypescript,
-      SiVite,
-      SiShadcnui,
-      SiTailwindcss,
+      { icon: SiReact, name: "React" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiVite, name: "Vite" },
+      { icon: SiShadcnui, name: "shadcn/ui" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
     ],
   },
   {
@@ -141,7 +145,11 @@ const recentWorks: Item[] = [
       "A simple *animation system* for games using *C++, Raylib and EnTT*",
     content:
       "This is a simple animation system for games built using C++, Raylib and EnTT. It allows you to *create and manage animations* for game objects in a *simple and efficient way*.",
-    usedTechnologies: [SiCplusplus, SiRaylib, SiCmake],
+    usedTechnologies: [
+      { icon: SiCplusplus, name: "C++" },
+      { icon: SiRaylib, name: "Raylib" },
+      { icon: SiCmake, name: "CMake" },
+    ],
   },
   {
     title: "QuitMe",
@@ -150,7 +158,9 @@ const recentWorks: Item[] = [
     subtitle: "*A macOS utility app* to *quit* all apps at once",
     content:
       "QuitMe is a macOS utility app that allows you to *quit all running apps* at once. It is a *simple application* which sits in *the menu bar* and provides a *shortcut* to quit all apps.",
-    usedTechnologies: [SiSwift],
+    usedTechnologies: [
+      { icon: SiSwift, name: "Swift" },
+    ],
   },
   {
     title: "Boids - Inverse Kinematics",
@@ -161,12 +171,12 @@ const recentWorks: Item[] = [
     content:
       "Flocking behavior simulation using boids algorithm. It is built using C++, Raylib and WebAssembly. It also includes Inverse Kinematics for fish movements.",
     usedTechnologies: [
-      SiCplusplus,
-      SiRaylib,
-      SiCmake,
-      SiWebassembly,
-      SiHtml5,
-      SiGithubactions,
+      { icon: SiCplusplus, name: "C++" },
+      { icon: SiRaylib, name: "Raylib" },
+      { icon: SiCmake, name: "CMake" },
+      { icon: SiWebassembly, name: "WebAssembly" },
+      { icon: SiHtml5, name: "HTML5" },
+      { icon: SiGithubactions, name: "GitHub Actions" },
     ],
   },
   {
@@ -176,7 +186,11 @@ const recentWorks: Item[] = [
     subtitle: "A simple *Kanban board* app",
     content:
       "Kanban Board is a simple Kanban board app that allows you to *create and manage tasks* in a Kanban board style. It is a web app built with *NextJS, TypeScript and Framer Motion*.",
-    usedTechnologies: [SiNextdotjs, SiTypescript, TbBrandFramerMotion],
+    usedTechnologies: [
+      { icon: SiNextdotjs, name: "Next.js" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: TbBrandFramerMotion, name: "Framer Motion" },
+    ],
   },
   {
     title: "Path Finding Visualizer",
@@ -185,7 +199,11 @@ const recentWorks: Item[] = [
     subtitle: "*A path finding visualizer* using *C++ and Raylib*",
     content:
       "This is a path finding visualizer built using C++ and Raylib. It allows you to *visualize different path finding algorithms* in action.",
-    usedTechnologies: [SiCplusplus, SiRaylib, SiCmake],
+    usedTechnologies: [
+      { icon: SiCplusplus, name: "C++" },
+      { icon: SiRaylib, name: "Raylib" },
+      { icon: SiCmake, name: "CMake" },
+    ],
   },
 ];
 

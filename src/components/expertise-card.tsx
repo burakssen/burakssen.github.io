@@ -15,17 +15,19 @@ export const ExpertiseCard = ({
 }: ExpertiseCardProps) => {
   return (
     <div
-      className={`bg-white/50 dark:bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-200/80 dark:border-zinc-700/80 p-6 ${className}`}
+      className={`glass rounded-2xl p-6 h-full flex flex-col ${className}`}
     >
-      <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100 mb-3">
-        {title}
-      </h3>
-      {description && (
-        <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-          {description}
-        </p>
-      )}
-      <div className="flex flex-wrap gap-3">
+      <div className="mb-4">
+        <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+          {title}
+        </h3>
+        {description && (
+          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+            {description}
+          </p>
+        )}
+      </div>
+      <div className="flex-1">
         {children}
       </div>
     </div>
@@ -44,11 +46,11 @@ export const TechIcon = ({
   className = "",
 }: TechIconProps) => (
   <div
-    className={`flex flex-col items-center p-1.5 rounded-md ${className}`}
+    className={`flex flex-col items-center justify-center p-3 rounded-xl cursor-default ${className}`}
     title={name}
   >
-    <Icon className="w-5 h-5 text-zinc-700 dark:text-zinc-300" />
-    <span className="mt-1 text-[10px] font-medium text-zinc-600 dark:text-zinc-400">
+    <Icon className="w-8 h-8 text-zinc-600 dark:text-zinc-400" />
+    <span className="mt-2 text-[10px] font-semibold text-zinc-500 dark:text-zinc-500 text-center leading-tight">
       {name}
     </span>
   </div>

@@ -1,64 +1,23 @@
-import { SiGithub, SiLinkedin, SiInstagram } from "@icons-pack/react-simple-icons";
-import { Mail, FileText, MapPin, ArrowUpRight } from "lucide-react";
-const socialmediaprops = {
-  profile_image: "https://avatars.githubusercontent.com/u/43742977",
-  username: "burakssen",
-  firstname: "Burak",
-  lastname: "Şen",
-  bio: "Full Stack Software Engineer",
-  social_media: [
-    {
-      url: "https://github.com/burakssen",
-      icon: SiGithub,
-      name: "GitHub",
-      color: "text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-    },
-    {
-      url: "https://www.linkedin.com/in/burak-ssen/",
-      icon: SiLinkedin,
-      name: "LinkedIn",
-      color: "text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-    },
-    {
-      url: "https://www.instagram.com/burak.ssen/",
-      icon: SiInstagram,
-      name: "Instagram",
-      color: "text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-    },
-    {
-      url: "mailto:buraksen7@hotmail.com",
-      icon: Mail,
-      name: "Email",
-      color: "text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-    },
-    {
-      url: "/cv.pdf",
-      icon: FileText,
-      name: "Resume",
-      download: true,
-      color: "text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-    },
-  ],
-  location: {
-    city: "Munich",
-    country: "Germany",
-  },
-};
+import { MapPin, ArrowUpRight } from "lucide-react";
+import { profileData } from "../data/profile";
 
 const SocialMediaCard = () => {
+  const { firstname, lastname, bio, introduction, location, social_media, profile_image, username } = profileData;
+
   return (
-    <div 
-      className="w-full bg-white/50 dark:bg-zinc-800/30 backdrop-blur-sm rounded-2xl border border-zinc-200/80 dark:border-zinc-700/80 p-6 md:p-8 shadow-sm"
-    >
+    <div className="w-full glass-card p-6 md:p-8">
       <div className="flex flex-col md:flex-row items-center gap-8 w-full">
         {/* Avatar */}
-        <div className="relative flex-shrink-0">
-          <div className="p-0.5 rounded-full bg-gradient-to-br from-zinc-300 to-zinc-400 dark:from-zinc-600 dark:to-zinc-500">
-            <div className="rounded-full p-0.5 bg-white dark:bg-zinc-900">
+        <div className="relative flex-shrink-0 group">
+          {/* Ambient glow */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-zinc-400/30 to-zinc-100/30 dark:from-white/10 dark:to-transparent rounded-full blur-2xl opacity-50" />
+          
+          <div className="relative rounded-full shadow-xl">
+            <div className="rounded-full bg-zinc-50/50 dark:bg-zinc-900/50 backdrop-blur-xl overflow-hidden">
               <img
-                src={socialmediaprops.profile_image}
-                alt={socialmediaprops.username}
-                className="w-36 h-36 md:w-48 md:h-48 rounded-full border-2 border-white dark:border-zinc-800 object-cover"
+                src={profile_image}
+                alt={username}
+                className="w-52 h-52 md:w-48 md:h-48 rounded-full object-cover shadow-2xl grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
               />
             </div>
           </div>
@@ -67,37 +26,37 @@ const SocialMediaCard = () => {
         {/* Info section */}
         <div className="flex-1 w-full text-center md:text-left flex flex-col justify-center">
           <div className="flex flex-col items-center md:items-start">
-            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-zinc-100 dark:to-zinc-300 bg-clip-text text-transparent">
-              {socialmediaprops.firstname} {socialmediaprops.lastname}
+            <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400 bg-clip-text text-transparent tracking-tight">
+              {firstname} {lastname}
             </h1>
-            <p className="mt-2 text-lg text-zinc-800 dark:text-zinc-100">
-              {socialmediaprops.bio}
-            </p>
+            <p className="mt-2 text-lg text-zinc-700 dark:text-zinc-300 font-medium">{bio}</p>
             
             {/* Location and username */}
-            <div className="mt-3 flex items-center text-sm text-zinc-700 dark:text-zinc-300">
+            <div className="mt-4 flex items-center text-sm text-zinc-600 dark:text-zinc-400 bg-white/30 dark:bg-black/30 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/20 dark:border-white/10 shadow-sm">
               <MapPin className="w-4 h-4 mr-1.5" />
-              <span>
-                {socialmediaprops.location.city}, {socialmediaprops.location.country}
-              </span>
-              <span className="mx-2 text-zinc-500 dark:text-zinc-400">•</span>
-              <span>@{socialmediaprops.username}</span>
+              <span>{location.city}, {location.country}</span>
+              <span className="mx-2 opacity-50">•</span>
+              <span>@{username}</span>
             </div>
+
+            <p className="mt-6 text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+              {introduction}
+            </p>
 
             {/* Social Links */}
             <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
-              {socialmediaprops.social_media.map((item, index) => (
+              {social_media.map((item, index) => (
                 <a
                   key={index}
                   href={item.url}
                   target={item.download ? "_self" : "_blank"}
                   rel="noopener noreferrer"
                   download={item.download ? item.name : undefined}
-                  className={`flex items-center px-4 py-2 text-sm font-medium rounded-md ${item.color}`}
+                  className="group flex items-center px-4 py-2 text-sm font-medium rounded-xl bg-white/40 dark:bg-black/40 hover:bg-white/60 dark:hover:bg-black/60 border border-white/20 dark:border-white/10 text-zinc-800 dark:text-zinc-200 transition-all duration-300 hover:shadow-lg backdrop-blur-sm"
                 >
                   <item.icon className="w-5 h-5" />
                   <span className="ml-2">{item.name}</span>
-                  <ArrowUpRight className="ml-1.5 w-3.5 h-3.5 opacity-0" />
+                  <ArrowUpRight className="ml-1.5 w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </a>
               ))}
             </div>
