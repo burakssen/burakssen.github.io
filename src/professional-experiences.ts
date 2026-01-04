@@ -27,7 +27,7 @@ import { FaJava } from "react-icons/fa";
 const recentProfessionalExperiences: Item[] = [
   {
     title: "Z-Ant",
-    date: "April 2025 - July 2025",
+    date: "April 2025 - Present",
     url: "https://github.com/ZantFoundation/Z-Ant",
     subtitle: "Zant Foundation - *Z-Ant*",
     content:
