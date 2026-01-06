@@ -1,6 +1,6 @@
 import {
   SiReact, SiTypescript, SiCplusplus, SiC, SiRaylib, SiZig, SiTailwindcss,
-  SiJavascript, SiVite, SiShadcnui, SiCmake, SiSwift, SiPython, SiPostgresql,
+  SiJavascript, SiCmake, SiSwift, SiPython, SiPostgresql,
   SiDjango, SiHtmx,
 } from "@icons-pack/react-simple-icons";
 
