@@ -57,16 +57,15 @@ const recentWorks: Item[] = [
   {
     title: "Flip-Fluid Simulation",
     date: "March 2025",
-    url: "https://burakssen.github.io/flip-fluid-simulation",
+    url: "https://burakssen.github.io/zff",
     subtitle:
       "*A rewrite for flip-fluid dynamics simulation* for Matthias Müller's Ten Minute Physics series",
     content:
-      "This is arewrite for flip-fluid simulation for Matthias Müller's Ten Minute Physics series. Its rewritten with C++, it can be compile into both desktop application and web assembly version.",
+      "This is arewrite for flip-fluid simulation for Matthias Müller's Ten Minute Physics series. Its rewritten with Zig, it can be compile into both desktop application and web assembly version.",
     usedTechnologies: [
-      { icon: SiCplusplus, name: "C++" },
+      { icon: SiZig, name: "Zig" },
       { icon: SiRaylib, name: "Raylib" },
       { icon: SiOpengl, name: "OpenGL" },
-      { icon: SiCmake, name: "CMake" },
       { icon: SiWebassembly, name: "WebAssembly" },
       { icon: SiGithubactions, name: "GitHub Actions" },
       { icon: SiHtml5, name: "HTML5" },
